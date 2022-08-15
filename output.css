@@ -1401,6 +1401,11 @@ a:hover {
   margin-bottom: 0px;
 }
 
+.prose-a\:text-base :is(:where(a):not(:where([class~="not-prose"] *))) {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .prose-li\:list-outside :is(:where(li):not(:where([class~="not-prose"] *))) {
   list-style-position: outside;
 }
@@ -1420,6 +1425,16 @@ a:hover {
 }
 
 .dark .dark\:prose-p\:text-gray-200 :is(:where(p):not(:where([class~="not-prose"] *))) {
+  --tw-text-opacity: 1;
+  color: rgb(229 231 235 / var(--tw-text-opacity));
+}
+
+.dark .dark\:prose-a\:text-gray-200 :is(:where(a):not(:where([class~="not-prose"] *))) {
+  --tw-text-opacity: 1;
+  color: rgb(229 231 235 / var(--tw-text-opacity));
+}
+
+.dark .dark\:prose-li\:text-gray-200 :is(:where(li):not(:where([class~="not-prose"] *))) {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
 }
