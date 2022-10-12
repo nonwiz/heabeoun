@@ -8510,12 +8510,12 @@ const parser = new DOMParser();
 const renderContent = (article) => {
     const [title, content] = getDOM(ids);
     title.textContent = article.title;
+    document.title = title.textContent;
     let articleContent = article.contentMarkdown
       .replaceAll(` align=\"center\"`, "")
       .replaceAll(` align=\"left\"`, "")
       .replaceAll(` align=\"right\"`, "")
     let markdown = md.render(articleContent);
-    console.log({"article": articleContent});
     const container = document.createElement("div");
     content.append(container);
     container.innerHTML = markdown;
