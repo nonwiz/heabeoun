@@ -1206,10 +1206,6 @@ video {
   position: relative;
 }
 
-.m-2 {
-  margin: 0.5rem;
-}
-
 .m-1 {
   margin: 0.25rem;
 }
@@ -1252,10 +1248,6 @@ video {
 
 .flex-col {
   flex-direction: column;
-}
-
-.justify-center {
-  justify-content: center;
 }
 
 .justify-between {
@@ -1331,10 +1323,6 @@ video {
 body {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 10vh;
-  padding-bottom: 0.5rem;
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
 }
@@ -1342,12 +1330,6 @@ body {
 .dark body {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
-}
-
-@media (min-width: 640px) {
-  body {
-    padding: 5rem;
-  }
 }
 
 h1,  h2,  h3,  h4,  h5,  h6 {
@@ -1479,19 +1461,12 @@ a:hover {
   font-weight: 700;
 }
 
-.before\:content-\[\'Switch\'\]::before {
-  --tw-content: 'Switch';
-  content: var(--tw-content);
-}
-
-.before\:content-\[\'Switchtheme\'\]::before {
-  --tw-content: 'Switchtheme';
-  content: var(--tw-content);
-}
-
-.after\:content-\[\'Switch\'\]::after {
-  --tw-content: 'Switch';
-  content: var(--tw-content);
+html {
+  max-width: 70ch;
+  padding: 3em 1em;
+  margin: auto;
+  line-height: 1.75;
+  font-size: 1.25em;
 }
 
 .prose-headings\:my-0 :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))) {
@@ -1560,4 +1535,5 @@ a:hover {
     content-visibility: auto;
   }
 }
+
 

@@ -9,7 +9,7 @@
 }
 
     body {
-      @apply pt-[10vh] pb-2 px-8 sm:p-20 bg-gray-200 text-gray-600 dark:text-gray-300;
+      @apply bg-gray-200 text-gray-600 dark:text-gray-300;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -64,4 +64,13 @@
       /* @apply before:content-["➤"]; */
       @apply font-bold;
     }
+
+    html {
+      max-width: 70ch;
+      padding: 3em 1em;
+      margin: auto;
+      line-height: 1.75;
+      font-size: 1.25em;
+    }
+
 
