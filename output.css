@@ -1194,6 +1194,18 @@ video {
   margin-bottom: 0;
 }
 
+.m-2 {
+  margin: 0.5rem;
+}
+
+.m-1 {
+  margin: 0.25rem;
+}
+
+.block {
+  display: block;
+}
+
 .flex {
   display: flex;
 }
@@ -1210,8 +1222,20 @@ video {
   flex-direction: row;
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
 .justify-between {
   justify-content: space-between;
+}
+
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .rounded-full {
@@ -1391,8 +1415,23 @@ a:hover {
           text-decoration-line: underline;
 }
 
-.link-active::before {
-  --tw-content: "➤";
+.link-active {
+  /* @apply before:content-["➤"]; */
+  font-weight: 700;
+}
+
+.before\:content-\[\'Switch\'\]::before {
+  --tw-content: 'Switch';
+  content: var(--tw-content);
+}
+
+.before\:content-\[\'Switchtheme\'\]::before {
+  --tw-content: 'Switchtheme';
+  content: var(--tw-content);
+}
+
+.after\:content-\[\'Switch\'\]::after {
+  --tw-content: 'Switch';
   content: var(--tw-content);
 }
 
@@ -1437,6 +1476,24 @@ a:hover {
 .dark .dark\:prose-li\:text-gray-200 :is(:where(li):not(:where([class~="not-prose"] *))) {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+  .md\:m-0 {
+    margin: 0px;
+  }
+
+  .md\:block {
+    display: block;
+  }
+
+  .md\:hidden {
+    display: none;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
 }
 
 @media (min-width: 1024px) {

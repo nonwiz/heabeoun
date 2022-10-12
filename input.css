@@ -61,6 +61,7 @@
     }
 
     .link-active {
-      @apply before:content-["➤"];
+      /* @apply before:content-["➤"]; */
+      @apply font-bold;
     }
 

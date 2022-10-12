@@ -1,15 +1,24 @@
 
 const theme = Number(localStorage.getItem("theme") || 0);
 
-
-window.addEventListener('DOMContentLoaded', (event) => {
-    const { href } = window.location;
+window.addEventListener('DOMContentLoaded', async (event) => {
+    let headerEle = document.querySelector("#header");
+    let headerText = "";
+    await new Promise(resolve => {
+        fetch('./layout/header.html').then(d => d.text()).then(text => {
+            headerText = text;
+            headerEle.outerHTML = text;
+            resolve();
+        })
+    })
+   const { href } = window.location;
     const nav = [...document.querySelector('nav').children];
     nav.forEach(link => {
         if (link.href == href) {
             link.classList.add("link-active");
         }
     })
+    
     updateTheme(false);
 
 });
