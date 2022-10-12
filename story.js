@@ -1,3 +1,11 @@
+const md = require('markdown-it')({
+  html: true,        // Enable HTML tags in source
+  xhtmlOut: true,        // Use '/' to close single tags (<br />).
+  breaks: true,        // Convert '\n' in paragraphs into <br>
+  linkify: true,        // Autoconvert URL-like text to links
+  typographer: true,
+  quotes: '“”‘’',
+});
 
 async function gql(query, variables = {}) {
   const data = await fetch('https://api.hashnode.com/', {
@@ -53,17 +61,15 @@ const parser = new DOMParser();
 const renderContent = (article) => {
     const [title, content] = getDOM(ids);
     title.textContent = article.title;
-
-    markdown = marked.parse(article.contentMarkdown);
-    const domMd = parser.parseFromString(markdown, "text/html");
-    console.log(domMd);
-    // content.textContent = markdown;
+    let articleContent = article.contentMarkdown
+      .replaceAll(` align=\"center\"`, "")
+      .replaceAll(` align=\"left\"`, "")
+      .replaceAll(` align=\"right\"`, "")
+    let markdown = md.render(articleContent);
+    console.log({"article": articleContent});
     const container = document.createElement("div");
     content.append(container);
     container.innerHTML = markdown;
-    // for (let ele of domMd.body.children) {
-    //   content.append(ele);
-    // }
     if (article == null) {
       console.log("Either you don't have such article or incorrect slug");
     }
