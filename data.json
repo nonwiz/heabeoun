@@ -50,5 +50,37 @@
     ],
     "personal": [
 
+        {
+            "title": "Project #3",
+            "description": "Aliquam lorem risus, bibendum sit amet lectus eget, porttitor gravida elit. Duis feugiat et turpis vitae semper. Cras commodo arcu ut lectus consequat, luctus dapibus",
+            "url": "/",
+            "label_url": "View",
+            "picture": "https://i.picsum.photos/id/1084/536/354.jpg?grayscale&hmac=Ux7nzg19e1q35mlUVZjhCLxqkR30cC-CarVg-nlIf60"
+        },
+        {
+            "title": "Project #2",
+            "description": "met lectus eget, porttitor gravida elit. Duis feugiat et turpis vitae semper. Cras commodo arcu ut lectus consequat, luctus dapibus",
+            "url": "/",
+            "label_url": "View",
+            "picture": "https://i.picsum.photos/id/212/600/300.jpg?grayscale&hmac=WFKczV0DUXq9OvcPduCgq05eic2GWLqD4Lrri-B3nuw"
+        },
+
+
+
+        {
+            "title": "Project #1",
+            "description": "lorem risus, bibendum sit amet lectus eget, porttitor gravida elit. Duis feugiat et turpis vitae semper. Cras commodo arcu ut lectus consequat, luctus dapibus",
+            "url": "/",
+            "label_url": "View",
+            "picture": "https://i.picsum.photos/id/834/600/400.jpg?grayscale&hmac=8QqH1ZhQbQPcdbs5Y29JFDND3nhIlsiJcb8c9CUm32I"
+        },
+
+        {
+            "title": "Project #0",
+            "description": "Aliquam lorem risus, bibendum sit amet lectus eget, porttitor gravida elit. Duis feugiat et turpis vitae semper. Cras commodo arcu ut lectus consequat, luctus dapibus",
+            "url": "/",
+            "label_url": "View",
+            "picture": "https://i.picsum.photos/id/12/600/400.jpg?grayscale&hmac=aBHJf3erzHYvRR3xRloiMRRn22mG4VUYvjkERlP2L_k"
+        }
     ]
 }
