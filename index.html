@@ -18,26 +18,15 @@
     <hr />
       </script>
     <section class="grid grid-cols-2 gap-2" id="works">
-
-      <article class="relative">
-        <img src="https://i.picsum.photos/id/12/600/400.jpg?grayscale&hmac=aBHJf3erzHYvRR3xRloiMRRn22mG4VUYvjkERlP2L_k" />
-        <aside class="absolute top-0 left-0 h-full">
-          <p class="bg-black/80 opacity-0 hover:opacity-100 p-2 text-white h-full">
-            Lorem ipsumaf wueihauwfhei uahweiuf hauiwehfiu awheuif awuiefhawuiefh
-          </p>
-        </aside>
-      </article>
-
-
     </section>
     <script type="text/javascript">
       const worksEle = document.querySelector("#works");
 
       const createWork = (src, content) => {
         return  `
-            <img src=${src} />
+            <img src=${src} class="h-48 w-full" />
             <aside class="absolute top-0 left-0 h-full">
-            <p class="bg-black/80 opacity-0 hover:opacity-100 p-2 text-white h-full">
+            <p class="bg-black/80 opacity-0 hover:opacity-100 p-2 text-white h-full text-clip overflow-hidden">
               ${content}
             </p>
             </aside>
