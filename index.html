@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>works | heabeoun</title>
   <link href="/output.css" rel="stylesheet">
   <script type="text/javascript" src="main.js"></script>
@@ -17,8 +16,55 @@
     <h1> heabeoun</h1>
     <header id="header"></header>
     <hr />
-    <script type="text/javascript" id="articles" src="blog.js"></script>
-    <section id="blog"> </section>
+      </script>
+    <section class="grid grid-cols-2 gap-2" id="works">
+
+      <article class="relative">
+        <img src="https://i.picsum.photos/id/12/600/400.jpg?grayscale&hmac=aBHJf3erzHYvRR3xRloiMRRn22mG4VUYvjkERlP2L_k" />
+        <aside class="absolute top-0 left-0 h-full">
+          <p class="bg-black/80 opacity-0 hover:opacity-100 p-2 text-white h-full">
+            Lorem ipsumaf wueihauwfhei uahweiuf hauiwehfiu awheuif awuiefhawuiefh
+          </p>
+        </aside>
+      </article>
+
+
+    </section>
+    <script type="text/javascript">
+      const worksEle = document.querySelector("#works");
+
+      const createWork = (src, content) => {
+        return  `
+            <img src=${src} />
+            <aside class="absolute top-0 left-0 h-full">
+            <p class="bg-black/80 opacity-0 hover:opacity-100 p-2 text-white h-full">
+              ${content}
+            </p>
+            </aside>
+        `
+      }
+
+     window.addEventListener('DOMContentLoaded', async (event) => {
+        let collection;
+        await new Promise(resolve => {
+            fetch('./data.json').then(d => d.json()).then(data => {
+              collection = data;
+              resolve();
+            })
+        })
+        const { works, personal } = collection;
+        console.log({works})
+        works.forEach(work => {
+          const article = document.createElement('article');
+          article.classList.add("relative");
+          article.innerHTML = createWork(work.picture, work.description);
+          worksEle.appendChild(article);
+        })
+      });
+    </script>
+
+
+
 
   </div>
 </body>

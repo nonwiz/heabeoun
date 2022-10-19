@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
+! tailwindcss v0.0.0-insiders.cb6e45a | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -408,6 +408,12 @@ img,
 video {
   max-width: 100%;
   height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+
+[hidden] {
+  display: none;
 }
 
 *, ::before, ::after {
@@ -1194,6 +1200,10 @@ video {
   margin-bottom: 0;
 }
 
+.collapse {
+  visibility: collapse;
+}
+
 .static {
   position: static;
 }
@@ -1202,8 +1212,20 @@ video {
   position: fixed;
 }
 
+.absolute {
+  position: absolute;
+}
+
 .relative {
   position: relative;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.left-0 {
+  left: 0px;
 }
 
 .m-1 {
@@ -1226,6 +1248,10 @@ video {
   display: table;
 }
 
+.grid {
+  display: grid;
+}
+
 .contents {
   display: contents;
 }
@@ -1238,8 +1264,24 @@ video {
   height: 1.5rem;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .w-6 {
   width: 1.5rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-rows-2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -1248,6 +1290,14 @@ video {
 
 .flex-col {
   flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .justify-between {
@@ -1276,8 +1326,30 @@ video {
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
+.bg-gray-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+}
+
+.bg-black\/80 {
+  background-color: rgb(0 0 0 / 0.8);
+}
+
+.bg-red-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
+}
+
 .p-1 {
   padding: 0.25rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .uppercase {
@@ -1297,9 +1369,17 @@ video {
   color: rgb(249 250 251 / var(--tw-text-opacity));
 }
 
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .underline {
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration-line: underline;
+}
+
+.opacity-0 {
+  opacity: 0;
 }
 
 .ring {
@@ -1332,7 +1412,7 @@ body {
   color: rgb(209 213 219 / var(--tw-text-opacity));
 }
 
-h1,  h2,  h3,  h4,  h5,  h6 {
+h1, h2, h3, h4, h5, h6 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   font-weight: 700;
@@ -1342,7 +1422,7 @@ h1,  h2,  h3,  h4,  h5,  h6 {
   color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
-.dark h1, .dark  h2, .dark  h3, .dark  h4, .dark  h5, .dark  h6 {
+.dark h1,.dark  h2,.dark  h3,.dark  h4,.dark  h5,.dark  h6 {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
 }
@@ -1452,8 +1532,7 @@ li {
 }
 
 a:hover {
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 
 .link-active {
@@ -1467,6 +1546,24 @@ html {
   margin: auto;
   line-height: 1.75;
   font-size: 1.25em;
+}
+
+.hover\:block:hover {
+  display: block;
+}
+
+.hover\:bg-black:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.hover\:opacity-100:hover {
+  opacity: 1;
+}
+
+.aria-checked\:bg-blue-600[aria-checked="true"] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
 }
 
 .prose-headings\:my-0 :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~="not-prose"] *))) {
