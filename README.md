@@ -9,6 +9,11 @@
 - [ ] rendering image within markdown
 - [ ] rendering video within markdown
 
+- [ ] Add title to post
+- [ ] hover the picture turns to color.
+- [ ]
+
+
 ```
 npx tailwindcss -i ./input.css -o ./output.css --watch
 ```

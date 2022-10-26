@@ -59,9 +59,6 @@ gql(GET_USER_ARTICLES, { page: 0 })
         if (JSON.stringify(user_articles) != JSON.stringify(articles)) {
             console.log("found newest content!");
             location.reload();
-            // const blog = document.querySelector('#blog');
-            // [...blog.children].map(ele => ele.remove());
-            // renderList(user_articles);
         }
         localStorage.setItem("articles", JSON.stringify(user_articles));
 

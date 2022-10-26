@@ -2,8 +2,9 @@
 const theme = Number(localStorage.getItem("theme") || 0);
 
 window.addEventListener('DOMContentLoaded', async (event) => {
+
+    updateTheme(false);
     let headerEle = document.querySelector("#header");
-    let headerText = "";
     await new Promise(resolve => {
         fetch('./layout/header.html').then(d => d.text()).then(text => {
             headerText = text;
@@ -19,7 +20,6 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         }
     })
     
-    updateTheme(false);
 
 });
 

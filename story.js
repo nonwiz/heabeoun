@@ -1,8 +1,8 @@
 const md = require('markdown-it')({
-  html: true,        // Enable HTML tags in source
-  xhtmlOut: true,        // Use '/' to close single tags (<br />).
-  breaks: true,        // Convert '\n' in paragraphs into <br>
-  linkify: true,        // Autoconvert URL-like text to links
+  html: true,        
+  xhtmlOut: true,      
+  breaks: true,       
+  linkify: true,       
   typographer: true,
   quotes: '“”‘’',
 });
@@ -89,27 +89,3 @@ gql(GET_USER_ARTICLES, { page: 0 })
         }
         localStorage.setItem("articles", JSON.stringify(user_articles));
 });
-
-// const GET_USER_ARTICLE = `
-// query GetUserPost($slug: String!) {
-//   post(slug: $slug, hostname: "nonwiz" )
-//   {
-//     title
-//     brief
-//     slug
-//     type
-//     dateUpdated
-//     contentMarkdown	
-//   }
-
-// }
-// `;
-
-
-
-// gql(GET_USER_ARTICLE, { slug: slug })
-//   .then(result => {
-//     const article = result.data.post;
-
-//   });
-

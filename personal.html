@@ -16,8 +16,42 @@
   <header id="header"></header>
  </div> 
   <hr />
-    <script type="text/javascript" id="articles" src="blog.js"></script>
-    <section id="blog"> </section>
+    <section class="grid grid-cols-2 gap-2" id="personals">
+    </section>
+
+    <script type="text/javascript">
+      const perEle = document.querySelector("#personals");
+
+      const createArticle = (src, content) => {
+        return  `
+            <img src=${src} class="h-48 w-full" />
+            <aside class="absolute top-0 left-0 h-full">
+            <p class="bg-black/80 opacity-0 hover:opacity-100 p-2 text-white h-full text-clip overflow-hidden">
+              ${content}
+            </p>
+            </aside>
+        `
+      }
+
+     window.addEventListener('DOMContentLoaded', async (event) => {
+        let collection;
+        await new Promise(resolve => {
+            fetch('./data.json').then(d => d.json()).then(data => {
+              collection = data;
+              resolve();
+            })
+        })
+        const { personal } = collection;
+        personal.forEach(per => {
+          const article = document.createElement('article');
+          article.classList.add("relative");
+          article.innerHTML = createArticle(per.picture, per.description);
+          perEle.appendChild(article);
+        })
+      });
+    </script>
+
+
 
   </div>
 </body>
