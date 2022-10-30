@@ -1,5 +1,5 @@
 
-const theme = Number(localStorage.getItem("theme") || 0);
+let theme = Number(localStorage.getItem("theme") || 0);
 
 window.addEventListener('DOMContentLoaded', async (event) => {
 
@@ -24,20 +24,34 @@ window.addEventListener('DOMContentLoaded', async (event) => {
 });
 
 const updateTheme = (update = true) => {
-    update && localStorage.setItem("theme", (Number(theme) || 0) + 1);
-
+    if (update) {
+        theme += 1;
+        localStorage.setItem("theme", theme);
+    }
     if (theme % 2 == 0) {
         document.documentElement.classList.remove('dark')
     } else {
         document.documentElement.classList.add('dark')
     }
 
-
 }
 
 
 const switchTheme = () => {
     updateTheme();
-    location.reload();
+    updateTheme(false);
 
 }
+
+      const createArticle = (src, content) => {
+        return  `
+        <article class="group">
+            <img src=${src} class="h-48 w-full grayscale group-hover:grayscale-0" />
+            <aside class="absolute bottom-0 left-0 w-full">
+            <p class="bg-black/40 opacity-0 group-hover:opacity-100 p-2 text-white h-full text-clip overflow-hidden">
+              ${content}
+            </p>
+            </aside>
+        </article>
+        `
+      }

@@ -22,17 +22,6 @@
     <script type="text/javascript">
       const perEle = document.querySelector("#personals");
 
-      const createArticle = (src, content) => {
-        return  `
-            <img src=${src} class="h-48 w-full" />
-            <aside class="absolute top-0 left-0 h-full">
-            <p class="bg-black/80 opacity-0 hover:opacity-100 p-2 text-white h-full text-clip overflow-hidden">
-              ${content}
-            </p>
-            </aside>
-        `
-      }
-
      window.addEventListener('DOMContentLoaded', async (event) => {
         let collection;
         await new Promise(resolve => {
@@ -45,7 +34,7 @@
         personal.forEach(per => {
           const article = document.createElement('article');
           article.classList.add("relative");
-          article.innerHTML = createArticle(per.picture, per.description);
+          article.innerHTML = createArticle(per.picture, per.title);
           perEle.appendChild(article);
         })
       });
